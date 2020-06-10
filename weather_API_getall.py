@@ -2,6 +2,7 @@ import sys
 import time
 import urllib.request as request
 import json
+#settings Place
 Placename = {
                   0 : 'F-D0047-049',  #'基隆市'
                   1 : 'F-D0047-061',  #'臺北市'
@@ -26,16 +27,15 @@ Placename = {
                  20 : 'F-D0047-081',  #'連江縣'
                  21 : 'F-D0047-085',  #'金門縣'
 }
+
+
 for q in Placename:
     PlaceNo = Placename[q]
-    #print(PlaceNo)
-    #print(PlaceNo)
 
+#ger time
 localtime = time.strftime("%Y-%m-%dT24:00:00",time.localtime())
         
-#氣象資料表
-#DATA = ['F-D0047-089','F-C0032-001',]
-
+#API_date
 HTTPLINE =  {
                 'scheme':'https://',
                 'netloc':'opendata.cwb.gov.tw',
@@ -48,7 +48,8 @@ HTTPLINE =  {
                 'format': 'format=JSON',
 
     }
-#print(HTTPLINE['DATA'])
+
+#Setting Api
 for q in Placename:
     PlaceNo = Placename[q]
     #for url in range(0,22):
@@ -58,7 +59,7 @@ for q in Placename:
     url = HTTP_1+HTTP_2
     #print(url)
         
-
+#get api data and write new Json
     with request.urlopen(url) as respones :
         data = json.load(respones)
         PlaceName= data['records']['locations'][0]['location']
@@ -75,45 +76,5 @@ for q in Placename:
                      
                             
         except:
-            pass
-
-                              
-    
-    #data1 = json.load(data.text)
-    #with open('data.json', 'w', encoding='utf-8') as file:
-    #    file.write(data1['records']) 
-
-#print(data['records']['location'][0]['weatherElement'][0])
-       
-#with open('data.json', 'w', encoding='utf-8') as file:
-#   file.write(PlaceName1) 
-    
-    
-    #for ii in range(0,2):
-    #    wa  = twlo['weatherElement'][ii]
-    #wa1 = list(wa)
-    #datas = str(twlo+wa1)
-    
-    #print(twlo)
-    
-        
-
-
-
-
-
-   
-   
-
-#data['records']['location'][i]['locationName']
-
-
-
-
-
-
-
-#一般天氣預報-今明36小時天氣預報  預設全台
-#   F-C0032-001
-
+            pass                          
 
