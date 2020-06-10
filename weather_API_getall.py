@@ -34,6 +34,7 @@ for q in Placename:
 
 #ger time
 localtime = time.strftime("%Y-%m-%dT24:00:00",time.localtime())
+localtime1 =time.strftime("%Y-%m-%d",time.localtime())
         
 #API_date
 HTTPLINE =  {
@@ -64,9 +65,7 @@ for q in Placename:
         data = json.load(respones)
         PlaceName= data['records']['locations'][0]['location']
         try:    
-            open('DD.json', 'w', encoding='utf-8') as file:
-                json.dump(PlaceName1, file, ensure_ascii=False)  
-            with open('DD.json', 'a', encoding='utf-8') as file:        
+            with open(localtime1+'.json', 'a', encoding='utf-8') as file:        
                 for z in range(0,30):
                     PlaceName1 = PlaceName[z]#['locationName']     
                     #vv = {}
