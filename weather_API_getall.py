@@ -41,7 +41,7 @@ HTTPLINE =  {
                 'netloc':'opendata.cwb.gov.tw',
                 'path':'/api/v1/rest/datastore/',
                 #'DATA': PlaceNo ,
-                'Authorization': '?Authorization=CWB-C4D5FA06-0CE0-4F90-B004-B08ECDDF5EF8', 
+                'Authorization': '?Authorization=CWB-C4xxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxEF8', 
                 'elementName': 'elementName=PoP6h,AT,CI,WX',
                 'limit': 'limit=36', 
                 'timeTo': "timeTo="+localtime,
